@@ -1,6 +1,8 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:ticket_app/base/res/widgets/app_double_text.dart';
+import 'package:ticket_app/base/res/widgets/ticket_view.dart';
 
 import '../base/res/media.dart';
 import '../base/res/styles/app_styles.dart';
@@ -14,7 +16,9 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: AppStyles.bgColor,
       body: ListView(
         children: [
-          const SizedBox(height: 40,),
+          const SizedBox(
+            height: 40,
+          ),
           Container(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
@@ -25,7 +29,7 @@ class HomeScreen extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("Good Morning", style: AppStyles.headLineStyle2),
+                          Text("Good Morning", style: AppStyles.headLineStyle3),
                           const SizedBox(
                             height: 5,
                           ),
@@ -46,7 +50,8 @@ class HomeScreen extends StatelessWidget {
                     height: 25,
                   ),
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 12, vertical: 12),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       color: const Color(0xFFF4F6FD),
@@ -62,8 +67,12 @@ class HomeScreen extends StatelessWidget {
                       ],
                     ),
                   ),
+                  const SizedBox(height: 40,),
+                  AppDoubleText(bigText: 'Upcoming Flights', smallText: 'View all', ),
+                  const SizedBox(height: 20,),
+                  const TicketView()
                 ],
-              ))
+              )),
         ],
       ),
     );
